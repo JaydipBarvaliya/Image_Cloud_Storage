@@ -11,7 +11,6 @@
       Log In
     </a>
   </div>
-
 </div>
 
 </template>
