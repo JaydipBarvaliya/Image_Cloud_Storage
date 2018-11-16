@@ -5,12 +5,20 @@
   <a class="item active">
     Image Storage
   </a>
-  
    
   <div class="right menu">
+    <div v-if="isLoggedIn" class="ui item" >
+    Galleries
 
-    <a href="#" class="ui item" @click="login">Log In</a>
-    <a href="#" class="ui item" @click="logout">LogOut</a>
+    upload               
+
+    logout
+
+    </div>
+
+   
+     <a v-if="!isLoggedIn" href="#" class="ui item" @click="login">Log In</a>
+  
 
   </div>
 </div> 
@@ -18,9 +26,10 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: "AppHeader",
-  methods: mapActions(["login"], ["logout"])
+  methods: mapActions(["login"]),
+  computed: mapGetters(["isLoggedIn"])
 };
 </script>
