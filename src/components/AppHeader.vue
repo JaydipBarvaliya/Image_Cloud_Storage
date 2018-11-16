@@ -1,3 +1,4 @@
+
 <template>
 <div class="ui secondary pointing menu">
   
@@ -7,9 +8,10 @@
   
    
   <div class="right menu">
+
     <a href="#" class="ui item" @click="login">Log In</a>
     <a href="#" class="ui item" @click="logout">LogOut</a>
-    
+
   </div>
 </div> 
 
@@ -19,6 +21,6 @@
 import { mapActions } from "vuex";
 export default {
   name: "AppHeader",
-  methods: mapActions(["login"],["logout"])
+  methods: mapActions(["login"], ["logout"])
 };
 </script>

@@ -15,7 +15,7 @@ const actions = {
 
     logout: ({ commit}) => {
         commit('setToken',null);
-        console.log("u are supposed to logout from console");
+        
     },
 
     login : () =>{
