@@ -2,28 +2,28 @@ import api  from '../../api/imgur';
 import qs from 'qs';
 
 const state = {
-    token: null
+    token: window.localStorage.getItem('imgur_token')
 };
 
 const getters = {
     isLoggedIn: (state) => {
-        return !!state.token;
+        return !!state.token; //here !!state.token give data as boolean 
     }
 };
 
 
 const actions = {
 
-    // logout: ({ commit}) => {
-    //     commit('setToken',null);
-        
-    // },
+    logout: ({ commit}) => {
+        commit('setToken',null);
+        window.localStorage.removeItem('imgur_token');
+    },
 
     finalizeLogin :({commit},hash)=>{
         const query=qs.parse(hash.replace('#',''));
-        console.log(query);
+        
         commit('setToken',query.access_token);
-
+        window.localStorage.setItem('imgur_token',query.access_token);
 
     },
 
