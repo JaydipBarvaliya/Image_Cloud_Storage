@@ -1,15 +1,12 @@
-// 109 number Video
 <template>
 <div class="ui secondary pointing menu">
   
-        <a class="item active">
-          <h2>Image Storage</h2>
-        </a>
+        <router-link to="/" class="item active">Image Storage</router-link>
         
         <div class="right menu">
           <div v-if="isLoggedIn" class="ui item" >
-          <a class="ui item" >Galleries</a>
-          <a class="ui item" >Upload</a>
+          <router-link class="ui item" to="/">Galleries</router-link>
+          <router-link class="ui item" to="/upload">Upload</router-link>
           <a class="ui item" @click="logout">Logout</a>
           </div>
 
@@ -23,7 +20,7 @@
 import { mapActions, mapGetters } from "vuex";
 export default {
   name: "AppHeader",
-  methods: mapActions(["login", "logout"]),
+  methods: mapActions(["login", "logout","imagelist"]),
   computed: mapGetters(["isLoggedIn"])
 };
 </script>
